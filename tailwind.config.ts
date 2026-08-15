@@ -64,6 +64,13 @@ export default {
           foreground: "hsl(var(--purple-foreground))",
         },
         "neon-green": "hsl(var(--neon-green))",
+        wandor: {
+          dark: "#0a0a0a",
+          text: "#1a1a1a",
+          muted: "#767676",
+          prompt: "#905831",
+        },
+
         "ton-blue": "hsl(var(--ton-blue))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
