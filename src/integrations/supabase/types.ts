@@ -12348,6 +12348,27 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      ai_get_subscription: {
+        Args: { _profile_id: string }
+        Returns: {
+          created_at: string
+          expires_at: string | null
+          id: string
+          images_used: number
+          period_start: string
+          plan: string
+          profile_id: string
+          status: string
+          updated_at: string
+          videos_used: number
+        }
+        SetofOptions: {
+          from: "*"
+          to: "ai_subscriptions"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       assert_model_access: { Args: { _model_id: string }; Returns: Json }
       attach_referral_for_telegram: {
         Args: { _code: string; _telegram_id: number }
