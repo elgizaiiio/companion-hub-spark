@@ -22,3 +22,12 @@ verify_jwt = false
 
 [functions.verify-ton-transaction]
 verify_jwt = false
+
+[functions.ai-chat]
+verify_jwt = false
+
+[functions.ai-media]
+verify_jwt = false
+
+[functions.ai-subscription]
+verify_jwt = false
