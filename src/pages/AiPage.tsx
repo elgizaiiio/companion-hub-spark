@@ -195,7 +195,7 @@ export default function AiPage() {
           <div className="flex min-h-[52vh] flex-col items-center justify-center">
             <Star className="h-20 w-20 text-white" />
             <h1 className="mt-5 font-serif text-[26px] leading-tight text-white">
-              {greeting()}, {user?.first_name || "there"}
+              {greeting()}, {user?.telegramUser?.first_name || "there"}
             </h1>
           </div>
         ) : (
