@@ -16,9 +16,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const BottomNav = () => {
   const location = useLocation();
+  const revealed = useNavRevealed();
+
+  if (location.pathname.startsWith("/ai") && !revealed) return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-[calc(env(safe-area-inset-bottom,0px)+0.6rem)] pt-2">
+
       <div className="mx-auto flex max-w-sm items-center gap-1 rounded-full border border-border/70 bg-background/80 p-1.5 backdrop-blur-2xl shadow-[0_10px_30px_-16px_rgba(16,46,38,0.28)]">
         {navItems.map((item) => {
           const isActive =
