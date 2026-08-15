@@ -18,6 +18,7 @@ import {
   ServersPage,
   WalletPage,
   StakingPage,
+  AiPage,
   AdminPage,
   AttackShopPage,
   NotFound,
@@ -84,6 +85,7 @@ const AnimatedRoutes = () => {
           <Route path="/wallet" element={<PageTransition><WalletPage /></PageTransition>} />
           <Route path="/101" element={<PageTransition><AdminPage /></PageTransition>} />
           <Route path="/staking" element={<PageTransition><StakingPage /></PageTransition>} />
+          <Route path="/ai" element={<PageTransition><AiPage /></PageTransition>} />
           <Route path="/attack-shop" element={<PageTransition><AttackShopPage /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Routes>

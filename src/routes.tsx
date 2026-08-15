@@ -11,6 +11,7 @@ export const routeLoaders: Record<string, () => Promise<unknown>> = {
   "/servers": () => import("@/pages/ServersPage"),
   "/wallet": () => import("@/pages/WalletPage"),
   "/staking": () => import("@/pages/StakingPage"),
+  "/ai": () => import("@/pages/AiPage"),
   "/101": () => import("@/pages/AdminPage"),
   "/attack-shop": () => import("@/pages/AttackShopPage"),
 };
@@ -39,6 +40,7 @@ export const TasksPage = lazy(() => import("@/pages/TasksPage"));
 export const ServersPage = lazy(() => import("@/pages/ServersPage"));
 export const WalletPage = lazy(() => import("@/pages/WalletPage"));
 export const StakingPage = lazy(() => import("@/pages/StakingPage"));
+export const AiPage = lazy(() => import("@/pages/AiPage"));
 export const AdminPage = lazy(() => import("@/pages/AdminPage"));
 export const AttackShopPage = lazy(() => import("@/pages/AttackShopPage"));
 export const NotFound = lazy(() => import("@/pages/NotFound"));
