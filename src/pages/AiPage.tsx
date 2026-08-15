@@ -424,7 +424,7 @@ export default function AiPage() {
           </div>
 
           <p className="text-center text-[12px] text-muted-foreground">
-            Paid from your USDT balance ({Number(user?.usdt ?? 0).toFixed(2)} USDT)
+            Paid from your USDT balance ({Number(user?.usdtBalance ?? 0).toFixed(2)} USDT)
           </p>
 
           {isPro ? (
