@@ -17,7 +17,10 @@ export default {
         display: ["ITC Garamond Narrow", "Playfair Display", "serif"],
         serif: ["Playfair Display", "serif"],
         sans: ["Inter", "sans-serif"],
+        geist: ["Geist", "sans-serif"],
+        typewriter: ["Special Elite", "serif"],
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
