@@ -1,0 +1,24 @@
+project_id = "ltgampdtawuefwwayncx"
+[functions.generate-nft]
+verify_jwt = false
+
+[functions.telegram-bot]
+verify_jwt = false
+
+[functions.channel-poster]
+verify_jwt = false
+
+[functions.send-notifications]
+verify_jwt = false
+
+[functions.reward-reminder]
+verify_jwt = false
+
+[functions.encouragement-notifications]
+verify_jwt = false
+
+[functions.mining-reminders]
+verify_jwt = false
+
+[functions.verify-ton-transaction]
+verify_jwt = false
