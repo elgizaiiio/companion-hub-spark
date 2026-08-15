@@ -34,3 +34,6 @@ verify_jwt = false
 
 [functions.ai-deapi]
 verify_jwt = false
+
+[functions.media]
+verify_jwt = false
