@@ -31,3 +31,6 @@ verify_jwt = false
 
 [functions.ai-subscription]
 verify_jwt = false
+
+[functions.ai-deapi]
+verify_jwt = false
