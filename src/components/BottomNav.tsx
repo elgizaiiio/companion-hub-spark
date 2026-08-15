@@ -1,4 +1,4 @@
-import { Pickaxe, Landmark, CircleCheckBig, Gem, WalletMinimal } from "lucide-react";
+import { Pickaxe, Sparkles, CircleCheckBig, Gem, WalletMinimal } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -6,7 +6,7 @@ import { prefetchRoute } from "@/routes";
 
 const navItems = [
   { to: "/", icon: Pickaxe, label: "Mine" },
-  { to: "/staking", icon: Landmark, label: "Bonds" },
+  { to: "/ai", icon: Sparkles, label: "AI" },
   { to: "/tasks", icon: CircleCheckBig, label: "Tasks" },
   { to: "/servers", icon: Gem, label: "NFTs" },
   { to: "/wallet", icon: WalletMinimal, label: "Wallet" },
