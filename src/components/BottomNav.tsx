@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { prefetchRoute } from "@/routes";
+import { useNavRevealed } from "@/hooks/use-nav-reveal";
+
 
 const navItems = [
   { to: "/", icon: Pickaxe, label: "Mine" },
