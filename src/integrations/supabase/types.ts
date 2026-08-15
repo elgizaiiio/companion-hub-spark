@@ -937,6 +937,36 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_generations: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          model: string
+          profile_id: string
+          prompt: string
+          url: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: string
+          model: string
+          profile_id: string
+          prompt: string
+          url: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          model?: string
+          profile_id?: string
+          prompt?: string
+          url?: string
+        }
+        Relationships: []
+      }
       ai_personalization: {
         Row: {
           about: string | null
@@ -1152,6 +1182,45 @@ export type Database = {
           project_id?: string
           prompt_tokens?: number
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      ai_subscriptions: {
+        Row: {
+          created_at: string
+          expires_at: string | null
+          id: string
+          images_used: number
+          period_start: string
+          plan: string
+          profile_id: string
+          status: string
+          updated_at: string
+          videos_used: number
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          images_used?: number
+          period_start?: string
+          plan?: string
+          profile_id: string
+          status?: string
+          updated_at?: string
+          videos_used?: number
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          images_used?: number
+          period_start?: string
+          plan?: string
+          profile_id?: string
+          status?: string
+          updated_at?: string
+          videos_used?: number
         }
         Relationships: []
       }
@@ -12257,6 +12326,27 @@ export type Database = {
           _title: string
         }
         Returns: Json
+      }
+      ai_activate_plan: {
+        Args: { _plan: string; _price: number; _profile_id: string }
+        Returns: {
+          created_at: string
+          expires_at: string | null
+          id: string
+          images_used: number
+          period_start: string
+          plan: string
+          profile_id: string
+          status: string
+          updated_at: string
+          videos_used: number
+        }
+        SetofOptions: {
+          from: "*"
+          to: "ai_subscriptions"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       assert_model_access: { Args: { _model_id: string }; Returns: Json }
       attach_referral_for_telegram: {
