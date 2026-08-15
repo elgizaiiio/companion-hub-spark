@@ -2,7 +2,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 export type AiMode = "chat" | "code" | "image" | "video";
 
-export type AiPlanId = "starter" | "pro" | "ultra";
+export type AiPlanId = "pro";
 
 export interface AiPlan {
   id: AiPlanId;
@@ -15,37 +15,17 @@ export interface AiPlan {
 
 export const AI_PLANS: AiPlan[] = [
   {
-    id: "starter",
-    name: "Starter",
-    priceUsd: 5,
-    tagline: "For casual creating",
-    perks: ["100 images / month", "10 videos / month", "Unlimited chat", "Standard models"],
-  },
-  {
     id: "pro",
-    name: "Pro",
-    priceUsd: 15,
-    tagline: "Unlimited creating",
+    name: "Unlimited",
+    priceUsd: 10,
+    tagline: "Everything, with no limits",
     highlight: true,
     perks: [
       "Unlimited images",
       "Unlimited videos",
       "Unlimited chat & code",
-      "Premium models",
+      "All premium models",
       "Priority queue",
-    ],
-  },
-  {
-    id: "ultra",
-    name: "Ultra",
-    priceUsd: 40,
-    tagline: "For studios & teams",
-    perks: [
-      "Everything in Pro",
-      "4K video & upscaling",
-      "Fastest queue",
-      "Commercial license",
-      "Early access models",
     ],
   },
 ];
@@ -59,6 +39,7 @@ export interface AiSubscription {
   images_limit: number | null;
   videos_limit: number | null;
 }
+
 
 export interface ChatMessage {
   role: "user" | "assistant";
