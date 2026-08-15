@@ -23,9 +23,9 @@ export type PlanId = "free" | "starter" | "pro" | "ultra";
 
 export const PLAN_LIMITS: Record<PlanId, { images: number | null; videos: number | null; price: number }> = {
   free: { images: 3, videos: 0, price: 0 },
-  starter: { images: 100, videos: 10, price: 5 },
-  pro: { images: null, videos: null, price: 15 },
-  ultra: { images: null, videos: null, price: 40 },
+  starter: { images: null, videos: null, price: 10 },
+  pro: { images: null, videos: null, price: 10 },
+  ultra: { images: null, videos: null, price: 10 },
 };
 
 export interface SubscriptionView {
@@ -77,3 +77,24 @@ export const loadSubscription = async (
 };
 
 export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/** Pull an active Alibaba (DashScope) key for a category: qwen | image | video. */
+export const alibabaKey = async (
+  db: ReturnType<typeof admin>,
+  category: "qwen" | "image" | "video",
+): Promise<string> => {
+  const { data } = await db
+    .from("alibaba_keys")
+    .select("api_key")
+    .eq("category", category)
+    .eq("status", "active")
+    .order("last_used_at", { ascending: true, nullsFirst: true })
+    .limit(1)
+    .maybeSingle();
+
+  const key = data?.api_key ?? Deno.env.get("ALIBABA_API_KEY") ?? "";
+  if (!key) throw new Error(`No active Alibaba key for ${category}`);
+  return key;
+};
+
+export const DASHSCOPE_BASE = "https://dashscope-intl.aliyuncs.com";
